@@ -1,0 +1,20 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.seoul_logo {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+}
+
+.inline-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.inline-content h1 {
+  /* margin-top: 50%; */
+}
