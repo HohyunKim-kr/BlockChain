@@ -1,0 +1,52 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <div id="root">
+      <form action="#">
+        <!-- <form action="https://www.google.com/search"> -->
+
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" />
+        <input type="password" name="pw" id="pw" />
+        <input type="number" name="age" placeholder="나이" />
+        <input type="email" name="email" placeholder="메일주소" />
+        <input type="checkbox" id="married" />
+        <input type="radio" name="gender" id="man" value="man" />
+        <label for="man">남자</label>
+        <input type="radio" name="gender" id="woman" value="woman" />
+        <label for="woman">여자</label>
+        <input type="married" name="age" placeholder="나이" />
+        <input type="date" name="birthday" />
+        <label for="birthday">생일</label>
+        <input type="color" name="color" id="color" />
+        <textarea
+          name="desciption"
+          id="desciption"
+          cols="30"
+          rows="10"
+          placeholder="자기소개"
+        ></textarea>
+
+        <select name="like" id="like">
+          <option value="apple">사과</option>
+          <option value="banana">바나나</option>
+          <option value="computer">컴퓨터</option>
+          <option value="phone">스마트폰</option>
+        </select>
+        <!-- <input type="text" name="q" placeholder="q" />
+        <input type="text" name="oq" placeholder="oq" />
+        <input type="text" name="aqs" placeholder="aqs" />
+        <input type="text" name="sourceid" placeholder="sourceid">
+        <input type="text" name="ie" placeholder="ie">
+        <button>보내기</button> -->
+        <!-- 입력된 데이터를 전부 지워준다. -->
+        <button type="rerset">보내기</button> <br />
+      </form>
+      <label for="pw">비밀번호</label>
+    </div>
+  </body>
+</html>
