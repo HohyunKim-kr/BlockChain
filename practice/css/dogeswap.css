@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  background-image: url(../imgs/dogebackground.jpg);
+}
+
+.header h2 {
+  color: aquamarine;
+}
+
+.contentbox {
+  display: inline-flex;
+  margin: auto;
+  /* display: inline-flex;
+  justify-content: center; */
+}
+
+.contentbox div {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: cadetblue;
+  color: black;
+  text-align: center;
+  border: 1px solid;
+}
+
+.gnb > li {
+  display: none;
+}
+
+.main {
+  border: 5px solid;
+  background-image: url(../imgs/dogehell.jpg);
+}
+
+.main div {
+  text-align: center;
+  color: aquamarine;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.main select {
+  width: 40px;
+  height: 40px;
+}
+
+.main input {
+  width: 300px;
+  height: 40px;
+}
+
+.from div,
+.To div {
+  display: inline-block;
+  margin: 20px;
+}
+
+.exchangebtn {
+  margin: 100px;
+}
+
+.exchangebtn button img {
+  width: 20px;
+  height: 20px;
+}
+
+.logo button img {
+  width: 70px;
+  height: 70px;
+}
