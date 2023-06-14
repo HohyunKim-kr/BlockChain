@@ -6,12 +6,16 @@
   </head>
   <body>
     <div id="root">
-      <form action="#">
+      <form action="">
         <!-- <form action="https://www.google.com/search"> -->
 
-        <label for="id">아이디</label>
-        <input type="text" name="id" id="id" />
-        <input type="password" name="pw" id="pw" />
+        <fieldset>
+          <legend>필수정보</legend>
+          <label for="id">아이디</label>
+          <input type="text" name="id" id="id" />
+          <input type="password" name="pw" id="pw" />
+        </fieldset>
+
         <input type="number" name="age" placeholder="나이" />
         <input type="email" name="email" placeholder="메일주소" />
         <input type="checkbox" id="married" />
