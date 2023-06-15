@@ -28,9 +28,74 @@
   font-style: italic;
   font-style: normal;
   font-style: oblique;
-  text-shadow: 0 0 2px black;
+  text-shadow: 10 10 0px black;
   text-align: center;
   text-decoration: underline solid blue;
   text-decoration: overline dotted black;
   text-decoration: line-through dashed green;
+  text-decoration-color: red;
+  text-transform: uppercase;
+  text-transform: lowercase;
+  text-transform: capitalize;
+  letter-spacing: 20px;
+  font-family: "Kablammo" "Gasoek One", sans-serif;
+}
+
+#css-file .position {
+  position: relative;
+}
+
+#css-file .position div {
+  /* position: relative; */
+  position: absolute;
+  /* position: fixed; */
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 100px;
+
+  /* width: 100px;
+  height: 100px; */
+  background-color: brown;
+}
+
+#css-file .overflow {
+  overflow: auto;
+  height: 10px;
+}
+
+#css-file .background div {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+
+/* background 속성정리 */
+
+#css-file .background :nth-child(1) {
+  background-color: #f00;
+  background-image: url(../imgs/image-g1423ac04e_1280.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#css-file .background :nth-child(2) {
+  background-color: #ff0;
+  background-image: url(../imgs/image-g1423ac04e_1280.png);
+  background-size: cover;
+  background-position: bottom right;
+}
+
+#css-file .background :nth-child(3) {
+  background-color: #f0f;
+  background-image: url(../imgs/image-g1423ac04e_1280.png);
+  background-size: 100px 100px;
+  background-repeat: repeat-y;
+}
+
+#css-file .background :nth-child(4) {
+  background-color: #0ff;
+  background: linear-gradient(45deg, blue 10%, red 50%, blue 90%);
+  background: radial-gradient(red, blue);
 }
