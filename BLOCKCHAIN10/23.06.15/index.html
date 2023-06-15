@@ -1,0 +1,122 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      /* selector - 선택자 */
+      /* *은 전체 선택자, 모든 엘리먼트에 전부 적용 */
+      /* * {
+        color: blue;
+      } */
+
+      /* 유형 선택자, 엘리먼트의 이름을 선택자로써 사용합니다. */
+      div {
+        background-color: beige;
+      }
+
+      /* 클래스 선택자, 앞에 .을 붙여서 클래스 선택자라는 것을 알려줍니다. */
+      .red-text {
+        color: red;
+      }
+
+      .bg-y {
+        background-color: yellow;
+      }
+
+      /* 아이디 선택자 */
+      #root {
+        margin-top: 100px;
+        color: purple;
+      }
+
+      /* 특정 선택자, 엘리먼트의 속성을 찾아서 일치하는 엘리먼트에게 CSS 속성을 적용한다. */
+      [target="_blank"] {
+        font-size: 50px;
+      }
+
+      /* comibnator, 결합자라고 부릅니다 */
+      /* ` `는 자손 결합자, 부모를 기준으로 하위 모든 선택자를 찾습니다. */
+      #parent .child {
+        font-size: 3rem;
+      }
+
+      /* ` > `자식 결합자 */
+      #parent > .child {
+        font-size: 2rem;
+      }
+      /* `~` 형제 결합자, 같은 부모를 가진 엘리먼트들 중 현재 엘리먼트의 뒤에 있는 엘리먼트를 찾는다. */
+      .grandson ~ .granddaugther {
+        color: rgb(0, 0, 0, 0.5);
+      }
+
+      /* `+` 인접형제 결합자, 바로 뒤에 있는 형제를 찾습니다. */
+      .grandson + .granddaugther {
+        color: rgb(100, 50, 25, 1);
+      }
+
+      .grandson.child {
+        color: red;
+      }
+
+      /* pseudo 부모의 마지막 자식을 찾아서 지정하는 선택자*/
+      .granddaugther:last-child {
+        background-color: rgb(255, 100, 0, 0.5);
+      }
+
+      /* pointer */
+      .red-text:hover {
+        color: white;
+        background-color: black;
+      }
+
+      /* pseudo element, 의사 요소 */
+      .granddaugther::after {
+        content: "손녀입니다";
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS</h1>
+      <p>
+        HTML 문서가 웹페이지를 출력해주는 파일이다.
+        <br />
+        웹페이지를 출력하는데 있어서 방식은 구조를 만드는 방식이다. <br />
+        모양을 만들때는? style이란는 속성을 사용할 수 있다. style 엘리먼트의
+        자식으로 css문법을 사용해서 설정할 수 있다. css 파일을 불러와서 설정할
+        수 있다.
+      </p>
+    </div>
+    <div id="root">
+      <div style="color: green">style 속성으로 색성 설정</div>
+      <div class="red-text bg-y">클랙스 선택자</div>
+      <a href="https://naver.com">네이버</a>
+      <a href="https://naver.com" target="_blank">네이버</a>
+
+      <div id="parent">
+        parent
+        <div class="child">
+          child
+          <div class="grandson">
+            grandson
+            <div class="grandson child">grandson child</div>
+          </div>
+          <div class="granddaugther">grand daugther</div>
+          <div class="granddaugther">grand daugther</div>
+        </div>
+        <div class="child">
+          child
+          <div class="granddaugther">grand daugther</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
