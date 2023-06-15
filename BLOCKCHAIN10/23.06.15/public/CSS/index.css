@@ -1,0 +1,36 @@
+/* 패딩을 줘서 내붕에 있는 색을 모두 칠할 수 있다. */
+#css-file {
+  padding: 50px 100px 10px 20px;
+}
+
+/* 
+#css-file .display {
+  margin: 50px;
+} 
+*/
+
+/* 1, 2, 3 위에서 아래로 적용을 시켜서 맨아래 것이 적용된다. */
+#css-file .display div {
+  display: block;
+  display: inline;
+  display: inline-block;
+  display: none;
+}
+
+#css-file .text {
+  color: crimson;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: "굴림";
+  font-family: "돋움";
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; 앞에 폰트가 없으면 뒤에 폰트를 출력 */
+  font-style: italic;
+  font-style: normal;
+  font-style: oblique;
+  text-shadow: 0 0 2px black;
+  text-align: center;
+  text-decoration: underline solid blue;
+  text-decoration: overline dotted black;
+  text-decoration: line-through dashed green;
+}
