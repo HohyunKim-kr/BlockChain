@@ -1,0 +1,31 @@
+/* 미디이 쿼리 */
+
+@media only screen and (max-width: 1000px) {
+  .area {
+    margin: 10px 20px 30px 40px;
+    padding: 40px 30px 20px 10px;
+    background-color: rgba(230, 230, 10, 0.5);
+    display: inline-block;
+    border-radius: 20px;
+    width: 500px;
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #root {
+    background-color: rgba(244, 0, 0, 0.5);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #root {
+    background-color: rgba(244, 0, 244, 0.5);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #root {
+    background-color: rgba(0, 244, 0, 0.5);
+  }
+}

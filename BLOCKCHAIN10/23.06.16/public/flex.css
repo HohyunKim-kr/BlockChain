@@ -1,0 +1,35 @@
+.flex-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  height: 200px;
+  align-items: center;
+  align-items: stretch;
+
+  flex-direction: column;
+
+  /* wrap을 하면 크기가 넘어가면 자동으로 내려간다 */
+  /*  
+  justify-content: center; 진행 방향에 대해서 정렬을 합니다. end면은 끝부분에 맞추게 됩니다. 
+  justify-content: space-around; 콘텐츠를 기준으로 서로같은 여백들을 가지고 있다.
+  justify-content: space-between; 일단 좌우 끝을 맞춘 후에 같은 간격으로 배치
+  justify-content: space-evenly; 모든 여백이 같은 크기로 맞춘다.
+  */
+}
+
+.flex-box div {
+  /* flex 1이란 것은 자식들에게 자유로이 flex 할 수 있게 한다. */
+  /* flex: 1; */
+  min-width: 100px;
+  background-color: yellowgreen;
+  height: 50px;
+  min-height: 50px;
+}
+
+.flex-box div:nth-child(2n) {
+  background-color: rebeccapurple;
+}

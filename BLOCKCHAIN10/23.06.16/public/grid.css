@@ -1,0 +1,52 @@
+.grid1 {
+  display: grid;
+
+  grid-template-rows: repeat(2, 50px) 100px;
+  grid-template-columns: repeat(4, minmax(150px, 200px));
+  /* grid-template-rows: 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px; */
+
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+.grid1 div {
+  background-color: black;
+  border: 1px solid red;
+}
+
+.grid1 div:nth-child(2n) {
+  background-color: blue;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-rows: repeat(4, 50px);
+  grid-template-columns: repeat(4, 50px);
+
+  grid-template-areas:
+    "header header header header"
+    "menu content content content"
+    "menu content content content"
+    "menu content content content";
+}
+
+.grid2 > div {
+  border: 1px solid black;
+}
+
+.grid2 .header {
+  grid-area: header;
+}
+
+.grid2 .menu {
+  grid-area: menu;
+}
+
+.grid2 .content {
+  grid-area: content;
+}
+
+.grid2 .center {
+  grid-area: center;
+}
