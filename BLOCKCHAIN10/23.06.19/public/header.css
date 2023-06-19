@@ -1,0 +1,81 @@
+#root {
+  width: auto;
+}
+
+.header {
+  background-image: url(./imgs/intro_bg_pc.png);
+  /* background-size: cover; */
+  height: 1000px;
+}
+
+.header .logo {
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.header .logo img {
+  width: 250px;
+}
+
+#root .header .text {
+  color: white;
+}
+
+.header .text p {
+  opacity: 0.5;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  padding: 2rem 0;
+}
+
+.buttons button {
+  width: 100%;
+  height: 100px;
+  border-radius: 1rem;
+  border: none;
+  color: white;
+  font-weight: 900;
+  font-size: 1.4rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  transition: border-radius 0.5s linear;
+}
+
+.buttons button:hover {
+  border-radius: 3rem;
+}
+
+.bootcamp button {
+  background: linear-gradient(to right, rgb(30, 24, 247), #3b5ae6);
+}
+
+.develrocket button {
+  background: linear-gradient(to right, rgb(247, 24, 173), #ee12dc);
+}
+
+.bootcamp,
+.develrocket {
+  flex: 1;
+  height: 40px;
+}
+
+.buttons ul li {
+  display: inline;
+}
+
+.buttons ul {
+  padding: 1rem 0;
+}
+
+.buttons .bootcamp ul {
+  color: lightsteelblue;
+  text-align: center;
+}
+
+.buttons .develrocket ul {
+  color: lightpink;
+  text-align: center;
+}
