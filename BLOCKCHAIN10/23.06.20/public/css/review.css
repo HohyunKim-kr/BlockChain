@@ -2,6 +2,8 @@
   background-color: blueviolet;
   color: white;
   padding: 8rem 0;
+  overflow: hidden;
+  position: relative;
 }
 
 #review > h1 {
@@ -28,17 +30,62 @@
   margin: 10rem 0;
 }
 
+#review .reviews::after {
+  content: "";
+  height: 30rem;
+  background: linear-gradient(
+    to right,
+    blueviolet 0%,
+    rgba(138, 43, 256, 0) 10%,
+    rgba(138, 43, 256, 0) 90%,
+    blueviolet 100%
+  );
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  display: block;
+}
+
 #review .reviews > div {
   display: flex;
   gap: 2.5rem;
   /*gap은 flex 박스의 설정이므로 flex 위치에 넣어준다.  */
   position: absolute;
-  animation: flow 15s linear infinite;
+  animation: flow 20s linear infinite;
   padding-right: 2.5rem;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 #review .reviews .item {
   position: relative;
+  animation: wave 5s ease infinite;
+}
+
+@keyframes wave2 {
+  0% {
+    transform: translateY(30);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(30);
+  }
+}
+
+#review .reviews .item:nth-child(2n) {
+  animation: waves 5s ease infinite;
 }
 
 #review .reviews .item > img {
