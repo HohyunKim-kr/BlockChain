@@ -1,0 +1,36 @@
+#header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+#header .text-box {
+  /* background-color: aqua; */
+  /* border: 1px solid black; */
+  flex-wrap: wrap;
+}
+
+#header .menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: aquamarine;
+}
+
+#header nav ul li {
+  /* display: flex; */
+  display: inline;
+
+  color: black;
+  margin: 20px;
+  text-align: center;
+
+  flex: 1;
+  /* flex: 1; */
+}
+
+#header .item-box {
+  background-color: blanchedalmond;
+}
