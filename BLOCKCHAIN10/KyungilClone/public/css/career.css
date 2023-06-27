@@ -1,0 +1,24 @@
+#career .item-box .row1 {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+#career .item-box .row2 {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  min-width: 25rem;
+}
+
+#career .item-box .row2 > div {
+  flex: 1;
+}
+
+#career .img {
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+  border-radius: 2rem;
+}
