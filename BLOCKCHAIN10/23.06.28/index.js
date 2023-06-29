@@ -2,7 +2,9 @@ let a = "임시 확인용입니다.";
 console.log(a);
 
 // object, 객체
-let obj = {
+let a1 = 3;
+
+let khh = {
   a: "이것은 값입니다.",
   prpoerty: "value",
   key: "value",
@@ -12,6 +14,18 @@ let obj = {
   },
   b: "asdas",
 };
+console.log("$$$$$$$$$$$$$$$");
+
+let asd = ["aaa", "bbbb", "cccc"];
+for (let i = 0; i < 3; i++) {
+  khh[asd[i]] = "asasd";
+  console.log(khh[asd[i]]);
+}
+// console.log(khh);
+
+// khh.asd[i] = asasd;
+// console.log(khh.d);
+// console.log("$$$$$$$$$$$$$$$");
 
 console.log(obj);
 console.log(obj.a);
