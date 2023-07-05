@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background-color: rgb(77, 77, 97);
+}
+
+#root .container {
+  /* display: flex; */
+}
+
+#root .container .sidebar {
+  justify-content: space-between;
+  list-style-type: none;
+  background-color: #ccc;
+  width: 10%;
+  height: 100%;
+  padding: 0;
+  margin: 10 10;
+  position: fixed;
+  overflow: auto;
+  border-radius: 10%;
+}
+
+#root .container .boxcontainer {
+}
+
+#root .container .boxcontainer .mainMove {
+  position: relative;
+  left: 15rem;
+  top: 1rem;
+  width: 100rem;
+  height: 500px;
+  background-color: aquamarine;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#root .container .boxcontainer .moveGame {
+  position: relative;
+  left: 15rem;
+  top: 1rem;
+  width: 100rem;
+  height: 500px;
+  background-color: rgb(49, 34, 34);
+}
+
+@keyframes flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#root .container .boxcontainer .moveGame::after {
+  content: "";
+  height: 30rem;
+  background: linear-gradient(
+    to right,
+    rgb(49, 34, 34) 0%,
+    rgba(138, 43, 256, 0) 10%,
+    rgba(138, 43, 256, 0) 90%,
+    rgb(47, 39, 39) 100%
+  );
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  display: block;
+}
+
+#root .container .boxcontainer .moveGame > div {
+  display: flex;
+  gap: 2.5rem;
+  /*gap은 flex 박스의 설정이므로 flex 위치에 넣어준다.  */
+  position: absolute;
+  animation: flow 20s linear infinite;
+  padding-right: 2.5rem;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#root .container .boxcontainer .moveGame .item {
+  position: relative;
+  animation: wave 5s ease infinite;
+}
+
+@keyframes wave2 {
+  0% {
+    transform: translateY(30);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(30);
+  }
+}
+
+#root .container .boxcontainer .moveGame .item:nth-child(2n) {
+  animation: waves 5s ease infinite;
+}
+
+#root .container .boxcontainer .moveGame .item > img {
+  width: 25rem;
+}
+
+#root .container .boxcontainer .moveGame .item > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4.5rem 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+#root .container .boxcontainer .moveGame .item div img {
+  width: 9rem;
+}
+
+#root .container .boxcontainer .moveGame .item div .picture {
+  width: 7rem;
+  height: 7rem;
+  background-color: red;
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  border-radius: 100rem;
+}
+
+#root .container .boxcontainer .moveGame p {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#root .container .boxcontainer .moveGame p:nth-child(3) {
+  font-size: 1rem;
+  color: #6842ff;
+  padding: 3rem 0;
+}
+
+/* 
+#root .container {
+  height: 1000px;
+  display: flex;
+  padding: 4rem 0rem 0rem 15rem;
+  justify-content: space-between;
+}
+
+#root .container .mainMove {
+  background-color: white;
+  width: 100rem;
+  height: 30rem;
+  display: flex;
+}
+
+#root .container .moveGame {
+  background-color: rgb(140, 22, 22);
+  width: 100rem;
+  height: 30rem;
+  display: flex;
+} */
+
+/* .text {
+  width: 100px;
+  height: 100%;
+}
+
+.text div {
+  text-align: center;
+} */
+
+/* 
+.moving {
+  width: 500px;
+  height: 500px;
+  background: url("../imgs/ui_title_start.jpg") 0 center / 500px repeat-x;
+  animation: movebg 2s linear infinite;
+}
+
+@keyframes movebg {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -500px center;
+  }
+}
+
+.movinhman {
+  width: 1920px;
+  height: 1000px;
+  background: url("../imgs/d76c_drre_210709.jpg") 0 center / 500px repeat-x;
+  animation: movebg 2s linear infinite;
+}
+
+@keyframes movebg {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -500px center;
+  }
+} */
