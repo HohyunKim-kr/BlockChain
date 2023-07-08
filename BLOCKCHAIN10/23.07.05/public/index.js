@@ -99,8 +99,10 @@ const obj = {
 };
 
 // Object.keys(obj) Object 클래스는 매개변수의 데이터를 받아올 수 있다.
+console.log("-------------------");
 console.log(Object.keys(obj));
 console.log(Object.values(obj));
+console.log("-------------------");
 
 let objA = 1;
 let objB = "a";
