@@ -1,0 +1,135 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>천호역 점심 리스트</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 1rem 2rem;
+        border: 1px solid black;
+      }
+      thead tr {
+        background-color: lightgray;
+      }
+      #name,
+      #star {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <table>
+        <thead>
+          <tr>
+            <th>Num</th>
+            <th id="name">밥집이름</th>
+            <th id="star">별점</th>
+            <th>갈사람</th>
+          </tr>
+        </thead>
+        <tbody id="food"></tbody>
+      </table>
+      <button id="lotto">랜덤뽑기</button>
+    </div>
+    <script>
+      function Restaurant(name, star, who) {
+        this.name = name;
+        this.star = star;
+        this.who = who;
+      }
+
+      const restaurants = [
+        new Restaurant(["천호역 노브랜드버거"], 5),
+        new Restaurant(["천호역 싸다김밥"], 5),
+        new Restaurant(["천호역 진도식당"], 0),
+        new Restaurant(["천호역 태양식당(한식 무한리필)"], 4),
+        new Restaurant(["천호역 천호식당(백반)"], 5),
+        new Restaurant(["천호역 횟집(제육쌈밥)"], 5),
+        new Restaurant(["천호역 육쌈냉면"], 3),
+        new Restaurant(["천호역 김밥집(여러가지메뉴)"], 5),
+      ];
+      console.log(restaurants);
+
+      const restaurantsElem = document.getElementById("food");
+      function addRestaurant(number, restaurant) {
+        const tempTr = document.createElement("tr");
+        const tempNum = document.createElement("td");
+        const tempName = document.createElement("td");
+        const tempStar = document.createElement("td");
+        const tempWho = document.createElement("td");
+        tempTr.append(tempNum);
+        tempTr.append(tempName);
+        tempTr.append(tempStar);
+        tempTr.append(tempWho);
+        restaurantsElem.append(tempTr);
+        tempNum.innerHTML = number;
+        tempName.innerHTML = restaurant.name;
+        tempStar.innerHTML = restaurant.star;
+
+        console.log(restaurant);
+
+        restaurant.name.forEach((item) => {
+          const nameLinkElem = document.createElement("a");
+          const nameElem = document.createElement("div");
+
+          nameElem.innerHTML = item;
+          nameLinkElem.target = "_blank";
+          nameLinkElem.href =
+            "https://www.google.com/search?q=" +
+            item +
+            "&oq=" +
+            item +
+            "&aqs=chrome..69i57j0i512l9.2616j1j4&sourceid=chrome&ie=UTF-8";
+          nameLinkElem.append(nameElem);
+          tempName.append(nameLinkElem);
+        });
+      }
+
+      for (let i = 0; i < restaurants.length; ++i) {
+        addRestaurant(i + 1, restaurants[i]);
+      }
+
+      function sortRestaurant(property, isSorted) {
+        restaurantsElem.innerHTML = " ";
+        restaurants.sort((a, b) => {
+          return a[property] > b[property] ? 1 : -1 * isSorted;
+        });
+        for (let i = 0; i < restaurants.length; ++i) {
+          addRestaurant(i + 1, restaurants[i]);
+        }
+      }
+
+      let isSortedName = 0;
+      let isSortedStar = 0;
+      document.getElementById("name").onclick = () => {
+        isSortedStar = 0;
+        if (isSortedName < 1) isSortedName = 1;
+        else if (isSortedName > 0) isSortedName = -1;
+        sortRestaurant("name", isSortedName);
+      };
+
+      document.getElementById("star").onclick = () => {
+        isSortedName = 0;
+        if (isSortedStar < 1) isSortedStar = 1;
+        else if (isSortedStar > 0) isSortedStar = -1;
+        sortRestaurant("star", isSortedStar);
+      };
+
+      function lotto() {
+        let n = Math.floor(Math.random() * 8);
+        return n;
+      }
+
+      document.getElementById("lotto").onclick = () => {
+        // const btnElem = document.createElement("div");
+        console.log(restaurants[lotto()].name);
+        // btnElem.innerHTML = console.log(btnChoice.lotto());
+      };
+    </script>
+  </body>
+</html>
