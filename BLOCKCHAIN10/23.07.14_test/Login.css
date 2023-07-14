@@ -1,0 +1,21 @@
+#root {
+  box-sizing: border-box;
+}
+
+#loginPage {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: 3rem;
+}
+
+#loginPage h1 {
+  flex: 1;
+  text-align: center;
+}
+
+.btn > button {
+  margin-top: 1rem;
+  background-color: green;
+}
