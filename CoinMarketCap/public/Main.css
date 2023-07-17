@@ -1,0 +1,48 @@
+#root {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* margin: 0 7rem; */
+}
+
+.FirstHeader {
+  margin-top: 1rem;
+  background-color: skyblue;
+  /* justify-content: space-between; */
+  display: flex;
+  flex-direction: row;
+}
+
+.SecondHeader {
+  margin: 0 7rem;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#container .item {
+  border-radius: 5%;
+  width: 600px;
+  height: 200px;
+  background-color: beige;
+  margin-left: 1rem;
+  /* display: flex; */
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.main {
+  margin: 0 7rem;
+}
+
+.main .listPortfolio {
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  color: aliceblue;
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
