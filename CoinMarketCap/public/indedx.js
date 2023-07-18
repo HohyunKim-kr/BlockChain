@@ -16,27 +16,27 @@ const cryptoList = document.getElementById("cryptocurrency");
 //   cryptoList.append(tempElem);
 // }
 
-const tempTr = document.createElement("tr");
-const tempStar = document.createElement("td");
-const tempNum = document.createElement("td");
-const tempName = document.createElement("td");
-const tempPrice = document.createElement("td");
-const tempHourChange = document.createElement("td");
-const temp24HourChange = document.createElement("td");
-const SevenDayChange = document.createElement("td");
-const Capitalization = document.createElement("td");
-const Volume = document.createElement("td");
-const Supply = document.createElement("td");
-const tempWho = document.createElement("td");
-tempTr.append(tempStar);
-tempTr.append(tempNum);
-tempTr.append(tempName);
-tempTr.append(tempStar);
-tempTr.append(tempWho);
-restaurantsElem.append(tempTr);
-tempNum.innerHTML = number;
-tempName.innerHTML = restaurant.name;
-tempStar.innerHTML = restaurant.star;
+// const tempTr = document.createElement("tr");
+// const tempStar = document.createElement("td");
+// const tempNum = document.createElement("td");
+// const tempName = document.createElement("td");
+// const tempPrice = document.createElement("td");
+// const tempHourChange = document.createElement("td");
+// const temp24HourChange = document.createElement("td");
+// const SevenDayChange = document.createElement("td");
+// const Capitalization = document.createElement("td");
+// const Volume = document.createElement("td");
+// const Supply = document.createElement("td");
+// const tempWho = document.createElement("td");
+// tempTr.append(tempStar);
+// tempTr.append(tempNum);
+// tempTr.append(tempName);
+// tempTr.append(tempStar);
+// tempTr.append(tempWho);
+// restaurantsElem.append(tempTr);
+// tempNum.innerHTML = number;
+// tempName.innerHTML = restaurant.name;
+// tempStar.innerHTML = restaurant.star;
 
 function addCryptoCurrency(value) {
   const tempElem = document.createElement("li");
