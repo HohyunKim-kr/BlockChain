@@ -1,0 +1,27 @@
+/* 패딩이 들어가도 정한 크기가 달라지지 않도록 */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 1920px;
+}
+
+.container {
+  padding: 0 250px;
+}
+
+.anim {
+  transition: transform 1s linear, opacity 1s linear;
+}
+
+.off {
+  transform: translateY(3rem);
+  opacity: 0 !important;
+}
