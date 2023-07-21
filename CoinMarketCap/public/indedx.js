@@ -2,8 +2,15 @@
 // cryptoName = document.getElementById("cryptocurrency");
 // for (let i = 0; i < 100; i++) {
 //   cryptoName.innerHTML(i);
-// }
 
+const btn = document.querySelector(".login");
+
+btn.addEventListener("click", clickHandler);
+
+function clickHandler() {
+  // ... 작업 로직 ...  //
+  window.location.href = "./login.html";
+}
 const cryptoList = document.getElementById("cryptocurrency");
 
 // function addCryptoCurrency(value) {
