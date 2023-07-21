@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression</title>
+  </head>
+  <body>
+    <h1>정규표현식</h1>
+    <p>특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어</p>
+    <script>
+      //   const str = "asewdadajkshdbkalsdbkjasbhkhakjdhaku";
+      //   for (let i = 0; i < str.length; i++) {
+      //     if (str[i] == "a") {
+      //       console.log(i);
+      //     }
+
+      //     while (true) {
+      //       let tempIdx = str.indexOf("a");
+      //       console.log(tempIdx);
+      //       if (tempIdx < 0) break;
+      //     }
+      //   }
+      //   const reg1 = /정규표현식/;
+      //   const reg2 = new RegExp("정규표현식");
+      //   console.log(
+      //     "저는 정규표현식을 사용하고 있습니다.".replace(reg1, "정규식")
+      //   );
+
+      //   const three = /[3, 6, 9]/;
+      //   console.log("90123123123i7213542345".match(three));
+      //   const korean = /[가-힣]/ / [0 - 9] / g.test("010-1234-5678");
+
+      console.log(/^\d{3}-\d{4}-\d{4}/.test("016-1234-5678"));
+      console.log(/^\d{3}-\d{4}-\d{4}/.test("018-1234-5678"));
+      console.log(/^\d{3}-\d{4}-\d{4}/g.test("018-1234-5678"));
+      console.log(/^\d{3}-\d{4}-\d{4}/g.test("011-1234-5678"));
+      console.log(/^\d{3}-\d{4}-\d{4}/g.test("02-1124-5678"));
+    </script>
+  </body>
+</html>
