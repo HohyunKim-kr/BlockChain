@@ -1,14 +1,18 @@
+/* root CSS */
 #root {
   /* display: flex; */
   /* flex-direction: column; */
   /* margin: 0 7rem; */
-  margin: 0 5rem;
+  /* margin: 0rem 5rem; */
+  margin-right: 5rem;
+  margin-left: 5rem;
 }
 
 #root hr {
   /* position: fixed; */
 }
 
+/* 맨위 헤더 부분 */
 .FirstHeader {
   margin-top: 1rem;
   /* background-color: skyblue; */
@@ -50,6 +54,7 @@
   cursor: pointer;
 }
 
+/* 두번째 헤더 부분 */
 .SecondHeader {
   display: flex;
   flex-direction: row;
@@ -91,15 +96,12 @@
   position: absolute;
 }
 
-.submenu li {
-  /* display: none; */
-  /* opacity: 0; */
-}
-
 #container {
   display: flex;
+  /* flex-direction: row; */
 }
 
+/* 3개의 아이템 리스트 */
 #container .item {
   box-shadow: 1px 1px 2px 1px rgb(214, 202, 202);
   border-radius: 5%;
@@ -107,11 +109,40 @@
   height: 250px;
   background-color: white;
   margin-left: 1rem;
-  /* display: flex; */
-  flex-direction: column;
-  /* justify-content: space-between; */
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
 }
 
+#container .item h3 {
+  padding-left: 1.5rem;
+}
+
+#container .item li {
+  padding: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#container .slider img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 972px) {
+  #container .item {
+    display: none;
+    background-color: red;
+  }
+  body {
+    background-color: #4b64fb;
+  }
+}
+
+/* 아이템 박스 슬라이드 구현 */
+
+/* 암호화폐 포트폴리오 */
 .main .listPortfolio {
   background-color: blueviolet;
   display: flex;
