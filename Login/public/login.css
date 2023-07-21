@@ -1,0 +1,47 @@
+#root {
+  background-image: url(./img/ho!.jpg);
+}
+#login-system {
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  max-width: 700px;
+  min-height: 600px;
+  max-height: 900px;
+  margin: 2rem auto 0 auto;
+  /* justify-content: stretch; */
+  /* align-content: stretch; */
+  /* flex-wrap: ; */
+}
+
+.Explain {
+  display: flex;
+  /* flex: 1; */
+  flex-direction: column;
+  /* background-color: red; */
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 5rem;
+  /* background-color: white; */
+}
+
+#login-form {
+  height: 300px;
+  display: flex;
+  /* flex: 1; */
+  flex-direction: column;
+  /* background-color: yellow; */
+  justify-content: stretch;
+}
+
+#login-form input {
+  padding-top: 1rem;
+  flex: 1;
+  /* text-align: center; */
+}
+
+#email,
+#password {
+  padding: 1rem;
+  text-align: start;
+}
