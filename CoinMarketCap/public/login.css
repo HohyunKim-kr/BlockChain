@@ -6,8 +6,8 @@
   flex-direction: column;
   /* background-color: aqua; */
   max-width: 700px;
-  min-height: 600px;
-  max-height: 900px;
+  min-height: 1000px;
+  /* max-height: 900px; */
   margin: 2rem auto 0 auto;
   /* justify-content: stretch; */
   /* align-content: stretch; */

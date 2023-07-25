@@ -95,7 +95,7 @@
             </li>
             <li class="cryptoC">
               <div>
-                <div>커뮤니티</div>
+                <div id="community">호빗커뮤니티</div>
                 <ul class="submenu">
                   <li>
                     <div>
@@ -230,16 +230,51 @@
       </div>
       <div class="main">
         <div class="listPortfolio">
-          <div class="favor">관심 목록</div>
-          <div class="Portfolio">포트폴리오</div>
-          <div class="crypto">가상자산</div>
-          <div class="category">카테고리</div>
+          <div>
+            <div class="favor">관심 목록</div>
+            <div class="Portfolio">포트폴리오</div>
+          </div>
+          <div>
+            <div class="crypto">가상자산</div>
+            <div class="category">카테고리</div>
+          </div>
+
           <div class="Ftx">FTX Bankruptcy Estate</div>
           <div class="Alleged">Alleged SEC Securities</div>
           <div class="Liquid">Liquid Staking Derivatives</div>
           <div class="DeFi">DeFi</div>
         </div>
-        <div id="cryptocurrency"></div>
+        <div class="data">
+          <table>
+            <colgroup>
+              <col class="num" />
+              <col class="name" />
+              <col class="price" />
+              <col class="hourchange" />
+              <col class="daychange" />
+              <col class="sevendaychange" />
+              <col class="marketcap" />
+              <col class="volume" />
+              <col class="cirulatingSupply" />
+              <col class="Last7Days" />
+            </colgroup>
+            <thead>
+              <tr id>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>1h %</th>
+                <th>24h %</th>
+                <th>7d%</th>
+                <th>Market Cap</th>
+                <th>Volume(24h)</th>
+                <th>Circulating Supply</th>
+                <th>Last 7 Days</th>
+              </tr>
+            </thead>
+            <tbody id="cryptocurrency"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>

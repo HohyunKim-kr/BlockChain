@@ -143,12 +143,89 @@
 /* 아이템 박스 슬라이드 구현 */
 
 /* 암호화폐 포트폴리오 */
+.listPortfolio div {
+  display: flex;
+  padding-left: 1rem;
+}
+
+.favor:hover {
+  color: #4b64fb;
+}
+.Portfolio:hover {
+  color: #4b64fb;
+}
+.crypto:hover {
+  color: #4b64fb;
+}
+.category:hover {
+  color: #4b64fb;
+}
+
 .main .listPortfolio {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   display: flex;
   flex-direction: row;
-  color: aliceblue;
+  color: black;
   text-align: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 900;
 }
+
+.data td {
+  padding: 1.3rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 0.8rem;
+  border-bottom: 2px solid black;
+}
+
+col.num {
+  width: 5%;
+}
+col.name {
+  width: 20%;
+}
+col.price {
+  width: 10%;
+}
+col.hourchange {
+  width: 5%;
+}
+col.daychange {
+  width: 10%;
+}
+col.sevendaychange {
+  width: 10%;
+}
+col.marketcap {
+  width: 10%;
+}
+col.volume {
+  width: 10%;
+}
+col.cirulatingSupply {
+  width: 10%;
+}
+col.Last7Days {
+  width: 10%;
+}
+
+/* th,
+td,
+li {
+  말줄임표코드
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+} */
