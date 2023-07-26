@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* max-width: 1000px;
+  margin: auto; */
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,56 @@
+.container div {
+  margin: .5rem 0;
+}
+
+.container {
+  margin-top: 15rem;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+}
+
+/* .cat-title select {
+  width:7.5%
+}
+
+.cat-title input {
+  width:20%
+} */
+
+#category {
+  background-color: beige;
+  height: 1.5rem;
+  padding-top: 0.25rem;
+}
+
+#title {
+  background-color: beige;
+  font-size: 1.25rem;
+}
+
+textarea {
+  min-height: 10rem;
+  resize: none;
+  background-color: beige;
+}
+
+#home, #save {
+  font-size: 2rem;
+  width: 22rem;
+}
+
+#home {
+  background-color: khaki;
+}
+
+#save {
+  background-color: rgb(255, 136, 92);
+}
+
+#income {
+  background-color: azure;
+}
+
+#expense {
+  background-color: thistle
+}

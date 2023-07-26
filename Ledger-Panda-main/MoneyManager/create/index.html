@@ -1,0 +1,45 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Board</title>
+    <link rel="stylesheet" href="./public/index.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+
+        <div class="buttons">
+          <a href="../">
+            <button id="home">Home</button>
+          </a>
+        </div>
+
+        <div class = "cat-title">
+          <select name="category" id="category">
+            <option selected value="">카테고리 선택</option>
+            <option value="food">식비</option>
+            <option value="transit">교통비</option>
+            <option value="beauty">미용</option>
+            <option value="utility">전기/가스</option>
+            <option value="etc">기타</option>
+          </select>
+          <input type="text" id="title" placeholder="거래처" />
+        </div>
+
+        <div class="textarea">
+          <textarea cols="50" rows="10" name="text" id="text" placeholder="세부 사항"></textarea>
+        </div>
+      <div class="income-expense">
+          <input type="number" id="income" placeholder="Income(KRW)">
+          <input type="number" id="expense" placeholder="Expense(KRW)">
+      </div>
+        <div class="buttons">
+          <button id="save">Save</button>
+        </div>
+
+      </div>
+    </div>
+    <script src="./public/index.js"></script>
+  </body>
+</html>
