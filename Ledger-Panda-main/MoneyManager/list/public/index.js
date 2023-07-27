@@ -5,29 +5,25 @@ const list = {
   dates: localStorage.getItem("dates")?.split(splitStr) || [],
   categories: localStorage.getItem("categories")?.split(splitStr) || [],
   titles: localStorage.getItem("titles")?.split(splitStr) || [],
-  incomes: localStorage.getItem("incomes")?.split(splitStr) || [],
-  expenses: localStorage.getItem("expenses")?.split(splitStr) || [],
+  transactions: localStorage.getItem("transactions")?.split(splitStr) || [],
+  spends: localStorage.getItem("spends")?.split(splitStr) || [],
 };
-console.log(list);
+// console.log(list);
+// console.log(list["transactions"]);
 
 const listElem = document.getElementById("list");
-
 
 const divList = [
   "numbers",
   "dates",
   "categories",
   "titles",
-  "incomes",
-  "expenses",
+  "transactions",
+  "spends",
 ];
 
 for (let i = 0; i < list.numbers.length; ++i) {
   const mdiv = document.createElement("div");
-
-  const mdiv1 = document.createElement("div");
-  const mdiv2 = document.createElement("div");
-  const mdiv3 = document.createElement("div");
 
   mdiv.classList.add("item");
   const wrapDiv1 = document.createElement("div");
@@ -35,7 +31,6 @@ for (let i = 0; i < list.numbers.length; ++i) {
   const wrapDiv3 = document.createElement("div");
   const wrapDiv4 = document.createElement("div");
   const wrapDiv5 = document.createElement("div");
-  const wrapDiv6 = document.createElement("div");
 
   divList.forEach((item) => {
     // const divMake = document.createElement("div");
@@ -48,7 +43,7 @@ for (let i = 0; i < list.numbers.length; ++i) {
       wrapDiv2.classList.add("numbers");
     } else if (item == "categories") {
       wrapDiv3.innerHTML = list[item][i];
-      console.log(localStorage.getItem("categories"));
+      // console.log(localStorage.getItem("categories"));
       wrapDiv3.classList.add("categories");
     } else if (item == "titles") {
       const aElem = document.createElement("a");
@@ -56,24 +51,24 @@ for (let i = 0; i < list.numbers.length; ++i) {
       aElem.href = `../board/?idx=${i}`;
       wrapDiv4.classList.add("title");
       wrapDiv4.append(aElem);
-    } else if (item == "incomes") {
+    } else if (item == "spends") {
+      // console.log(list[item][i]);
       wrapDiv5.innerHTML = list[item][i];
-      wrapDiv5.classList.add("account");
-    } else if (item == "expenses") {
-      wrapDiv6.innerHTML = list[item][i];
-      wrapDiv6.classList.add("account");
+      wrapDiv5.classList.add("spend");
+    } else if (item == "transactions") {
+      if (list[item][i] == "income") {
+        wrapDiv5.style = "background-color:azure";
+      }
+      if (list[item][i] == "expense") {
+        wrapDiv5.style = "background-color:thistle";
+      }
     }
     // mdiv.append(divMake);
-    mdiv1.append(wrapDiv2);
-    mdiv1.append(wrapDiv1);
-    mdiv2.append(wrapDiv3);
-    mdiv2.append(wrapDiv4);
-    mdiv3.append(wrapDiv5);
-    mdiv3.append(wrapDiv6);
-
-    mdiv.append(mdiv1);
-    mdiv.append(mdiv2);
-    mdiv.append(mdiv3);
+    mdiv.append(wrapDiv2);
+    mdiv.append(wrapDiv1);
+    mdiv.append(wrapDiv3);
+    mdiv.append(wrapDiv4);
+    mdiv.append(wrapDiv5);
   });
   listElem.append(mdiv);
 }

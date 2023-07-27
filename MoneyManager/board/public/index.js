@@ -67,3 +67,47 @@
 //   setComments();
 //   // location.reload();
 // };
+const splitStr = "/,/,/,";
+
+const list = {
+  numbers: localStorage.getItem("numbers")?.split(splitStr) || [],
+  dates: localStorage.getItem("dates")?.split(splitStr) || [],
+  categories: localStorage.getItem("categories")?.split(splitStr) || [],
+  titles: localStorage.getItem("titles")?.split(splitStr) || [],
+  incomes: localStorage.getItem("incomes")?.split(splitStr) || [],
+  expenses: localStorage.getItem("expenses")?.split(splitStr) || [],
+};
+
+const divList = [
+  "numbers",
+  "dates",
+  "categories",
+  "titles",
+  "incomes",
+  "expenses",
+];
+
+divList.forEach((item) => {
+  //   if (item == "numbers")
+  if (item == "dates") {
+  } else if (item == "numbers") {
+  } else if (item == "categories") {
+    console.log(window.location.href);
+    const a = window.location.href;
+    const idx = +a.split("=").pop();
+    console.log(+a.split("=").pop() + 1);
+    console.log(list[item][0]);
+    document.getElementsByClassName("cat-title").innerHTML = 1;
+    const category = (document.getElementsByClassName(
+      "cat-title"
+    ).innerHTML = 1);
+    // console.log(list[item][0].toString());
+    // const data = list.numbers;
+    // console.log(data);
+    console.log(list[item][idx]);
+    category.innerHTML = 1; // list[item][idx];
+  } else if (item == "titles") {
+  } else if (item == "incomes") {
+  } else if (item == "expenses") {
+  }
+});

@@ -26,6 +26,7 @@
 #title {
   background-color: beige;
   font-size: 1.25rem;
+  width: 15rem;
 }
 
 textarea {
@@ -47,10 +48,6 @@ textarea {
   background-color: rgb(255, 136, 92);
 }
 
-#income {
+#spend {
   background-color: azure;
-}
-
-#expense {
-  background-color: thistle
 }

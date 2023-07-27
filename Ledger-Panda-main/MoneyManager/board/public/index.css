@@ -16,7 +16,7 @@
   margin: auto;
 }
 
-.textarea {
+#textarea {
   margin: auto;
   /* display: flex; */
   width: 25rem;
@@ -24,13 +24,13 @@
   background-color: beige;
 }
 
-.cat-title {
+#cat-title {
   padding: 1rem;
   background-color: beige;
   height: 1rem;
 }
 
-.useway {
+#useway {
   /* flex: 1; */
   padding: 1rem;
   background-color: beige;
@@ -51,28 +51,8 @@
   margin: auto;
 }
 
-.income {
+#spends {
   padding: 1rem;
   height: 1rem;
   background-color: azure;
-}
-
-.expense {
-  padding: 1rem;
-  height: 1rem;
-  background-color: thistle;
-}
-
-#totalbox {
-  display: flex;
-  margin: auto;
-}
-
-.total {
-  /* margin: auto; */
-  /* display: flex; */
-  margin: auto;
-  width: 25rem;
-  height: 3rem;
-  background-color: rgb(255, 136, 92);
 }

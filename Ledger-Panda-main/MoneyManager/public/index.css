@@ -1,5 +1,24 @@
-.container p {
-    width: 100;
-    height: 100;
-    background-color: black;
-}
+#container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #Logo {
+    background-color: rgb(21, 110, 184);
+    text-align: center;
+    margin: auto;
+    margin-top: 10rem;
+    /* max-width: 300px; */
+    font-size: 50;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  #totoalAccount {
+    background-color: rgb(15, 171, 177);
+    margin: auto;
+    text-align: center;
+    max-width: 300px;
+    min-height: 300px;
+  }

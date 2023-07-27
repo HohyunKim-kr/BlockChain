@@ -73,19 +73,21 @@ for (let i = 0; i < list.numbers.length; ++i) {
   const wrapDiv4 = document.createElement("div");
   const wrapDiv5 = document.createElement("div");
   const wrapDiv6 = document.createElement("div");
-
+  // let data = 0;
   divList.forEach((item) => {
     // const divMake = document.createElement("div");
-
     if (item == "dates") {
       wrapDiv1.innerHTML = new Date(+list[item][i]).toLocaleString();
       wrapDiv1.classList.add("date");
     } else if (item == "numbers") {
       wrapDiv2.innerHTML = list[item][i];
+      // data = list[item][i];
       wrapDiv2.classList.add("numbers");
+      // console.log(list[item][i]);
+      // console.log(data);
     } else if (item == "categories") {
       wrapDiv3.innerHTML = list[item][i];
-      console.log(localStorage.getItem("categories"));
+      // console.log(localStorage.getItem("categories"));
       wrapDiv3.classList.add("categories");
     } else if (item == "titles") {
       const aElem = document.createElement("a");

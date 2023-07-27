@@ -1,65 +1,76 @@
 #container {
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  border: 1px solid black;
   /* justify-content: center; */
+  
+}
+
+a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: black;
+  /* font-size: 1.25rem; */
 }
 
 h1 {
-  color: aqua;
+  color: rgb(161, 255, 168);
 }
 
 #list {
   margin: auto;
   display: flex;
-  width: 800px;
+  flex-flow: column nowrap;
+  border: 1px solid black;
+  /* width: 800px; */
   /* text-align: center; */
-  flex-direction: column;
   /* align-items: center; */
+  /* background: linear-gradient(-45deg, pink, beige) */
 }
 
 .item {
   display: flex;
+  flex-flow: row wrap;
+  margin: 3rem;
+  /* flex-flow: column nowrap; */
   /* justify-content: center; */
   /* margin: auto; */
 }
 
 .item div {
   padding: 1rem;
+  border: 1px solid black;
+  /* border-radius: 10px; */
+  /* width: 125; */
+  /* height: 60; */
+  font-size: 1.5rem;
+  /* margin: auto; */
+  /* flex: 1 2 auto; */
 }
 
 .numbers {
-  background-color: blanchedalmond;
-  border-radius: 10px;
-
+  background-color: white;
 }
 
 .date {
-  background-color: steelblue;
-  border-radius: 10px;
+  background-color: beige;
 }
 
 .categories {
   background-color: beige;
-  border-radius: 10px;
 }
 
-.account:nth-child(1) {
-  background-color: azure;
-  border-radius: 10px;
-}
-
-.account:nth-child(2) {
-  background-color: thistle;
-  border-radius: 10px;
+.spend {
+  /* background-color: beige; */
 }
 
 .title {
   background-color: beige;
-  border-radius: 10px;
 }
 
-.numbers {
-  background-color: blanchedalmond;
-  border-radius: 10px;
+#create {
+  background-color: brown;
+  float: right;
+  /* display: none; */
 }
