@@ -30,7 +30,7 @@ divList.forEach((item) => {
   } else if (item == "titles") {
     document.getElementById("useway").innerHTML = list[item][idx];
   } else if (item == "spends") {
-    document.getElementById("spends").innerHTML = list[item][idx];
+    document.getElementById("spends").innerHTML = `${list[item][idx]}원`;
   } else if (item == "texts") {
     document.getElementById("textarea").innerHTML = list[item][idx];
   } else if (item == "transactions") {

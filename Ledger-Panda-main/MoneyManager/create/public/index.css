@@ -1,12 +1,22 @@
+html {
+  background: radial-gradient(white 10%, beige 90%);
+}
+
 .container div {
   margin: .5rem 0;
 }
 
 .container {
+  margin:auto;
   margin-top: 15rem;
   text-align: center;
   display:flex;
   flex-direction: column;
+  /* border: 2px solid #ffb6a2; */
+  box-shadow: 0 0 1rem #ffa6a2;
+  border-radius: 10px;
+  width: 32rem;
+  /* background: linear-gradient(to bottom, white, beige); */
 }
 
 /* .cat-title select {
@@ -31,23 +41,21 @@
 
 textarea {
   min-height: 10rem;
+  width: 25rem;
   resize: none;
   background-color: beige;
 }
 
-#home, #save {
+#save {
   font-size: 2rem;
-  width: 22rem;
-}
-
-#home {
-  background-color: khaki;
+  width: 25rem;
 }
 
 #save {
-  background-color: rgb(255, 136, 92);
+  background-color: #ffa6a2
 }
 
 #spend {
-  background-color: azure;
+  background-color: beige;
+  width: 25rem;
 }

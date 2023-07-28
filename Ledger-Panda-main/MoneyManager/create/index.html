@@ -9,19 +9,19 @@
     <div id="root">
       <div class="container">
         <div class="buttons">
-          <a href="../">
-            <button id="home">Home</button>
+          <a href="../list/">
+            <img src="../public/img/Home Logo.png" alt="">
           </a>
         </div>
 
         <div class="primary">
           <select name="category" id="category">
-            <option selected value="">카테고리 선택</option>
-            <option value="food">식비</option>
-            <option value="transit">교통비</option>
-            <option value="beauty">미용</option>
-            <option value="utility">전기/가스</option>
-            <option value="etc">기타</option>
+            <option selected value="카테고리 없음">카테고리 선택</option>
+            <option value="식비">식비</option>
+            <option value="교통비">교통비</option>
+            <option value="미용">미용</option>
+            <option value="수도광열비">전기/가스</option>
+            <option value="기타">기타</option>
           </select>
 
           <input type="text" id="title" placeholder="거래처" />
@@ -59,7 +59,7 @@
         </div>
 
         <div class="spend">
-          <input type="number" id="spend" />
+          <input type="number" id="spend" placeholder="수입/지출 항목을 선택해주세요."/>
         </div>
 
         <div class="buttons">

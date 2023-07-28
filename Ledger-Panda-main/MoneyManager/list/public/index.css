@@ -1,59 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin:0;
+  padding:0;
+  background-color: beige  
+}
+
 #container {
   text-align: center;
+  /* position:relative; */
   display: flex;
-  flex-flow: column nowrap;
-  border: 1px solid black;
-  /* justify-content: center; */
-  
+  flex-flow:column wrap;
+  /* border: 1px solid black; */
 }
+
+/* #container div {
+  border:1px solid black;
+} */
 
 a {
   text-decoration: none;
   font-weight: bolder;
   color: black;
-  /* font-size: 1.25rem; */
-}
-
-h1 {
-  color: rgb(161, 255, 168);
 }
 
 #list {
   margin: auto;
-  display: flex;
-  flex-flow: column nowrap;
-  border: 1px solid black;
-  /* width: 800px; */
-  /* text-align: center; */
-  /* align-items: center; */
-  /* background: linear-gradient(-45deg, pink, beige) */
 }
 
 .item {
   display: flex;
   flex-flow: row wrap;
-  margin: 3rem;
-  /* flex-flow: column nowrap; */
-  /* justify-content: center; */
-  /* margin: auto; */
+  margin: 2rem;
+  background: radial-gradient(rgba(255, 220, 204, 0), beige);
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.5);
+  /* border: 1px solid black; */
 }
 
 .item div {
   padding: 1rem;
-  border: 1px solid black;
-  /* border-radius: 10px; */
-  /* width: 125; */
-  /* height: 60; */
   font-size: 1.5rem;
-  /* margin: auto; */
-  /* flex: 1 2 auto; */
+  border-radius: 10px;
+}
+
+.item > div:first-child {
+  /* border-right: 1px dashed rgba(0,0,0,0.5); */
+  border-radius: 0;
+}
+
+.item div div {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item div div div {
+  border: 1px solid rgba(0,0,0,0.5);
 }
 
 .numbers {
-  background-color: white;
+  border: 1px dashed rgba(0,0,0,0.5);
 }
 
-.date {
+/* .date {
   background-color: beige;
 }
 
@@ -61,16 +72,17 @@ h1 {
   background-color: beige;
 }
 
-.spend {
-  /* background-color: beige; */
-}
-
 .title {
   background-color: beige;
-}
+} */
 
 #create {
-  background-color: brown;
-  float: right;
-  /* display: none; */
+  /* background: linear-gradient(45deg, thistle, beige, azure); */
+  font-size: 3rem;
+  color:rgba(0,0,0,0.85);
+  border-radius: 10px;
+  margin-top: 1rem;
+  border: 1px solid rgba(0,0,0,0.85);
+  /* margin-left: 25rem;
+  position: fixed; */
 }

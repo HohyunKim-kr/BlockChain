@@ -1,3 +1,4 @@
+let total = 0;
 const splitStr = "/,/,/,";
 
 const list = {
@@ -10,7 +11,6 @@ const list = {
 };
 // console.log(list);
 // console.log(list["transactions"]);
-
 const listElem = document.getElementById("list");
 
 const divList = [
@@ -24,6 +24,11 @@ const divList = [
 
 for (let i = 0; i < list.numbers.length; ++i) {
   const mdiv = document.createElement("div");
+
+  const mdiv1 = document.createElement("div");
+  const mdiv2 = document.createElement("div");
+  const mdivInner1 = document.createElement("div");
+  const mdivInner2 = document.createElement("div");
 
   mdiv.classList.add("item");
   const wrapDiv1 = document.createElement("div");
@@ -52,8 +57,7 @@ for (let i = 0; i < list.numbers.length; ++i) {
       wrapDiv4.classList.add("title");
       wrapDiv4.append(aElem);
     } else if (item == "spends") {
-      // console.log(list[item][i]);
-      wrapDiv5.innerHTML = list[item][i];
+      wrapDiv5.innerHTML = `${list[item][i]}원`;
       wrapDiv5.classList.add("spend");
     } else if (item == "transactions") {
       if (list[item][i] == "income") {
@@ -64,11 +68,36 @@ for (let i = 0; i < list.numbers.length; ++i) {
       }
     }
     // mdiv.append(divMake);
-    mdiv.append(wrapDiv2);
-    mdiv.append(wrapDiv1);
-    mdiv.append(wrapDiv3);
-    mdiv.append(wrapDiv4);
-    mdiv.append(wrapDiv5);
+    mdiv1.append(wrapDiv2);
+    mdivInner1.append(wrapDiv4);
+    mdivInner1.append(wrapDiv1);
+    mdivInner2.append(wrapDiv5);
+    mdivInner2.append(wrapDiv3);
+
+    mdiv2.append(mdivInner1);
+    mdiv2.append(mdivInner2);
+
+    mdiv.append(mdiv1);
+    mdiv.append(mdiv2);
   });
   listElem.append(mdiv);
 }
+
+// localStorage.setItem("totals", total);
+
+// console.log(list.transactions);
+function totalCalc() {
+  list.numbers.forEach((item) => {
+    // console.log(list.transactions[item - 1]);
+    if (list.transactions[item - 1] == "expense") {
+      total -= +list.spends[item - 1];
+    } else if (list.transactions[item - 1] == "income") {
+      total += +list.spends[item - 1];
+    }
+  });
+  return total;
+}
+
+// console.log(totalCalc());
+
+localStorage.setItem("totals", totalCalc());

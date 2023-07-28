@@ -1,24 +1,36 @@
+html {
+  background: radial-gradient(white 25%, beige 75%);
+}
+
+
 #container {
     text-align: center;
     display: flex;
     flex-direction: column;
+    margin-top: 8rem;
   }
   
   #Logo {
-    background-color: rgb(21, 110, 184);
+    background-color: white;
     text-align: center;
     margin: auto;
     margin-top: 10rem;
     /* max-width: 300px; */
-    font-size: 50;
-    font-weight: 900;
     cursor: pointer;
+    border:none;
   }
   
   #totoalAccount {
-    background-color: rgb(15, 171, 177);
+    /* background-color: white; */
+    box-shadow: 0 0 1rem #ffa6a2;
+    border-radius: 10px;
+    width: 32rem;
     margin: auto;
+    margin-top: 8rem;
     text-align: center;
-    max-width: 300px;
-    min-height: 300px;
+    font-size: 3rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ff554f;
+    /* max-width: 300px;
+    min-height: 300px; */
   }

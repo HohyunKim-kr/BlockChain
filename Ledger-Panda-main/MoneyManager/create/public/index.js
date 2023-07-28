@@ -51,7 +51,9 @@ document.getElementById("save").onclick = () => {
   } else if (expenseElem.checked) {
     transactions.push(expenseElem.value);
     button2_click();
-  } else alert("제대로 입력해라~");
+  } else {
+    alert("제대로 입력 안 할래?")
+  }
 
   // thistle
 
