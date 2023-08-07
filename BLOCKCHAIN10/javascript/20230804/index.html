@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .name {
+        text-align: center;
+      }
+      .board {
+        width: 600px;
+        font-size: 12px;
+        border-collapse: collapse;
+      }
+
+      .board > thead {
+        background: #333;
+        color: #fff;
+      }
+
+      .board > thead > tr > th {
+        padding: 4px 7px;
+      }
+
+      .board > tbody {
+        font-size: 12px;
+        padding: 5px 0;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+      }
+
+      .board > tbody > tr > td {
+        padding: 4px 7px;
+      }
+
+      .board > tbody > tr > td:nth-child(2) {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="name">게시판</h2>
+    <table class="board">
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th>조회수</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="./list.js"></script>
+  </body>
+</html>
