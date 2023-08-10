@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+.border-table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.border-table > thead {
+  background: #333;
+  color: #fff;
+}
+
+.border-table > thead > tr > th {
+  padding: 7px 14px;
+}
+
+.border-table > tbody > tr > td {
+  padding: 7px 14px;
+  border: 1px solid blueviolet;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 7px 14px;
+  background: #efefef;
+  border: 1px solid #999;
+  margin-top: 10px;
+  margin-top: 10px;
+}
+
+.border-title {
+  padding: 18px 0;
+}
+
+.border-write-form {
+  width: 500px;
+}
+
+form ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form li {
+  display: flex;
+  flex-direction: column;
+}
+
+li > span {
+  width: 50px;
+  position: relative;
+  top: 11px;
+  left: 10px;
+  background-color: #fff;
+}
+
+li > input {
+  padding: 10px 8px;
+  border: 1px solid #999;
+}
+
+li > textarea {
+  resize: none;
+  height: 500px;
+  padding: 20px;
+  border: 1px solid #999;
+}
