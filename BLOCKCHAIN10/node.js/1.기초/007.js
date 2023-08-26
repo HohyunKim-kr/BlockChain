@@ -1,0 +1,1 @@
+module.exprots = (a,b) => a + b
