@@ -21,3 +21,21 @@ NodeJS에서 기본적으로 제공하는 `내장모듈`
 const net = requrie("net");
 console.log(net);
 ```
+
+## 230831
+
+1. Network
+2. Net
+
+   - server (서버는 클라이언트에 요청에 따라 응답해주는 친구, 언제든지 listen 상태)
+   - client
+     `connect`
+     `connection`
+
+3. Data 보내고 받는
+
+---
+
+4. http
+   - request
+   - response
