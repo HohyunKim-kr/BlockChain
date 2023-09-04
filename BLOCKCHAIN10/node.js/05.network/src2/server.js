@@ -13,6 +13,8 @@ server.on("connection", (socket) => {
 
     if (request.uri === "/") {
       response.sendFile("index.html");
+    } else if (request.uri === "/") {
+      response.sendFile("index.html");
     }
   });
 });
