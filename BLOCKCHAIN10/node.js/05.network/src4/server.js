@@ -1,18 +1,38 @@
+// const express = require("express");
 require("dotenv").config();
 const net = require("net");
-const { SERVER_PORT } = process.env;
-const PORT = SERVER_PORT || 3000;
+const Request = require("./lib/request");
+const Response = require("./lib/response");
+const { SERVER_PORT, NODE_ENV } = process.env;
+const PORT = SERVER_PORT || 3000; // .env 정보가 없을 경우
 
 const server = net.createServer();
 
-server.on("connection", (socekt) => {
+server.on("connection", (socket) => {
   console.log("ESTABLISHED");
 
-  socekt.on("data", (chunk) => {
-    console.log(chunk.toString());
+  socket.on("data", (chunk) => {
+    const req = new Request(chunk);
+    const res = new Response(socket);
+
+    if (req.headers.method === "GET" && req.headers.uri === "/boards/list") {
+      res.sendFile("list.html");
+    } else if (
+      req.headers.method === "GET" &&
+      req.headers.uri === "/boards/write"
+    ) {
+      res.sendFile("write.html");
+    } else if (
+      req.headers.method === "POST" &&
+      req.headers.uri == "/boards/writes"
+    ) {
+      console.log(req.headers);
+      // res.send("OK");
+      res.redirect("/boards/list");
+    }
   });
 });
 
 server.listen(PORT, () => {
-  console.log(`Server Listenig on Port ${PORT}`);
+  console.log(`Server Listening on Port ${PORT}`);
 });

@@ -1,11 +1,12 @@
-const path = require("path");
 const fs = require("fs");
+const path = require("path");
 
 const TEMPLATE_DIR = "views";
 
 const STATUS_MESSAGE = {
   200: "OK",
   404: "NOT FOUND",
+  302: "FOUND",
 };
 
 class Response {
@@ -13,19 +14,11 @@ class Response {
   statusCode;
   headers = {};
   body;
+  socket;
 
-  constructor() {
-    this.headers["Connection"] = "Close";
-    this.headers["Content-Type"] = "text/html; charset=UTF-8";
-  }
-
-  setBody(_body) {
-    this.body = _body;
-
-    const bodyBuffer = Buffer.from(_body);
-    const ContentLength = bodyBuffer.length;
-    this.setHeaders("Content-Length", ContentLength);
-    return this;
+  constructor(socket) {
+    this.socket = socket;
+    this.initialHeaders();
   }
 
   setStatus(_code) {
@@ -38,48 +31,87 @@ class Response {
     return this;
   }
 
+  setContentLength() {
+    if (!this.body) return null;
+    const buffer = Buffer.from(this.body);
+    this.setHeaders("Content-Length", buffer.length);
+  }
+
+  setBody(_body) {
+    this.body = _body;
+    this.setContentLength();
+    return this;
+  }
+
+  initialHeaders() {
+    this.headers = {};
+    this.headers["Connection"] = "Close";
+    this.headers["Content-Type"] = "text/html; charset=UTF-8";
+  }
+
   convertToHttpStartLine() {
     const statusCode = this.statusCode || 200;
-    return `${this.version} ${statusCode} ${STATUS_MESSAGE[statusCode]}`;
+    const startline = [
+      this.version,
+      statusCode,
+      STATUS_MESSAGE[statusCode],
+    ].join(" ");
+
+    return startline;
   }
 
   convertToHttpHeaders() {
     const headers = [];
     for (const key in this.headers) {
       const message = `${key}: ${this.headers[key]}`;
+
       headers.push(message);
     }
 
     return headers.join("\r\n");
   }
 
+  redirect(pathname) {
+    this.setStatus(302);
+    this.setHeaders("Location", pathname);
+    this.end();
+  }
+
   sendFile(filename) {
-    const filepath = path.join(_direname, TEMPLATE_DIR, filname);
+    const filepath = path.join(__dirname, "..", TEMPLATE_DIR, filename);
     const buffer = fs.readFileSync(filepath);
     const body = buffer.toString();
-    this.send(body);
+    return this.send(body);
   }
 
   send(data) {
-    if (!data) throw new Error("Data 내용이 비어있습니다.");
     this.setBody(data);
-    this.end();
+    return this.end();
   }
 
   end() {
     const startline = this.convertToHttpStartLine();
     const headers = this.convertToHttpHeaders();
-    this.statusCode = null;
 
-    const message = [startline, "\r\n", headers, "\r\n\r\n", this.body].join(
-      ""
-    );
-    console.log(message);
-    return message;
+    // 초기화
+    this.statusCode = null;
+    this.initialHeaders();
+
+    const message = [startline, headers, "", this.body].join("\r\n");
+
+    this.socket.write(message);
+    // return message
   }
 }
 
-const res = new Response();
+// const res = new Response()
+// const message = res.setStatus(404).setHeaders("a", "b").end()
+// console.log(message)
+//
+// const message2 = res.send("hello world!")
+// console.log(message2)
 
-res.sendFile("index.html");
-res.sendFile("view.html");
+// const message3 = res.sendFile("index.html")
+// console.log(message3)
+
+module.exports = Response;
