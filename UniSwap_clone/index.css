@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+#navigationBar {
+  position: fixed;
+  top: 0;
+  /* width: 100% */
+  left: 0;
+  right: 0;
+}
+
+.navBar {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar > li {
+  background-color: #191b1f;
+  font-size: 2rem;
+  color: #a3a4a5;
+  padding-left: 1rem;
+}
+
+.navBar > li:hover {
+  color: white;
+}
+
+.btn {
+  background-color: #da0370;
+  border-radius: 0.5rem;
+}
+
+.hi {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 18rem;
+}
+
+#body {
+  background-color: aquamarine;
+}
