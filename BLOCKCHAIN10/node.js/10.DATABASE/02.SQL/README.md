@@ -221,3 +221,10 @@ const job = new 직업(a);
 
 // 자동 ioc di 컨테이너?
 ```
+
+
+```js
+WEBSERVER - MYSQL 4계층 : host: (IP,3306) (IP, PORT) 7계층 : username, pswd, 
+// 현재 사용하고 있는 database
+select database();
+```
