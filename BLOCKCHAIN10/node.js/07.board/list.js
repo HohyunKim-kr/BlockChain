@@ -1,6 +1,6 @@
 const row = require("./row");
 
-module.exports = () => {
+module.exports = (list) => {
   return {
     title: "게시판",
     body: `
@@ -18,7 +18,7 @@ module.exports = () => {
             ${list.map((item) => row(item))}
             </tbody>
       </table>  
-      <a href = ".write.html" class="btn">글쓰기</a> 
+      <a href = "./write" class="btn">글쓰기</a> 
 `,
   };
 };
