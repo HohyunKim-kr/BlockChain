@@ -39,4 +39,4 @@ const decodePayload = JSON.parse(
 //JWT
 
 const jwt = [encode, encodePayload].join(".");
-console.log(jwt);
+// console.log(jwt);

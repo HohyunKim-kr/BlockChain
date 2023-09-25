@@ -59,10 +59,33 @@ client - server - db
    - POST /user/login - 로그인
 
 ```sql
-CREATE TABLE Users {
+CREATE TABLE Users(
       userid VARCHAR(50) NOT NULL,
       userPW VARCHAR(50) NOT NULL,
       PRIMARY KEY(userid)
-};
+);
 
+Insert INTO id=web7722 pw=123
+INSERT INTO Users(userid,userPW) values("web7722","123");
 ```
+
+input 박스에 있는 내용을 controller에 전달
+
+쿠키를 만드는 행위는 어디서 해야할까여?
+
+로그인이 되었을때 
+안되었을 때 
+판단하는 근거는 
+token 여부
+
+토큰이 있을때만 User 정보를 가져오는 것을 구현하기 
+없으면 유저정보 x 
+
+## AuthMiddleware 
+
+1. Token 여부 확인
+2. Token 여부가 확인되면, 토큰 유효성 검사
+3. 유효성 검사가 끝나면 payload값에 있는 id를 꺼내온다. 
+4. 해당 id를 가지고 DB에 요청을 한다. 
+5. req 객체에 DB요청 결과값을 만든다. 
+
