@@ -58,7 +58,7 @@ client - server - db
    - GET /user/login - 로그인
    - POST /user/login - 로그인
 
-```sql
+```sql,
 CREATE TABLE Users(
       userid VARCHAR(50) NOT NULL,
       userPW VARCHAR(50) NOT NULL,
