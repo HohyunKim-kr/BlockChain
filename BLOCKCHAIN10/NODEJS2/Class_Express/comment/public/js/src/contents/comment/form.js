@@ -5,7 +5,7 @@ class CommentForm extends Component {
     return `
     <h4>댓글쓰기 <span>${this.props.length}</span></h4>
     <form id="commentFrm" class="commentFrm">
-      <span class="ps_box"><input type="text" placeholder="댓글내용 입력"/></span>
+      <span class="ps_box"><input type="text" name="content" id="content" placeholder="댓글내용 입력"/></span>
       <button type="submit" class="btn">등록</button>
     </form>
     `;
@@ -19,8 +19,10 @@ class CommentForm extends Component {
 
   handleSumbit(e) {
     e.preventDefault();
-    console.log("submit 발동");
-    this.props.insertItem();
+    console.log(e.target.content.value);
+    // console.log("submit 발동");
+    const { value: content } = e.target.content;
+    this.props.insertItem(content);
   }
 
   setEvent() {
