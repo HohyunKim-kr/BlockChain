@@ -19,6 +19,12 @@ app.post("/login", (req, res) => {
   res.json("result:응답");
 });
 
+// app.get("/login", (req, res) => {});
+
+app.get("/signup", (req, res) => {
+  res.render("signup.html");
+});
+
 app.listen(3000, () => {
-  console.log("서버 30000");
+  console.log("frontend server start 3000");
 });
