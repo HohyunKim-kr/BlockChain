@@ -7,7 +7,7 @@ const sequelize = new Sequelize(database, username, password, db);
 // entity
 require("./user/user.entity")(sequelize, Sequelize.DataTypes);
 
-const { User } = sequelize;
+const { User } = sequelize.models;
 
 module.exports = {
   sequelize,
