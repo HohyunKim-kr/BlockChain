@@ -10,14 +10,8 @@ const ButtonStyle = styled.div`
   background-color: #5353f5;
 `;
 
-const LoginBtn = ({ path }) => {
-  const nav = useNavigate();
-  const ButtonClickHandler = () => {
-    console.log(path.path);
-    nav(path.path);
-  };
-
-  return <ButtonStyle onClick={ButtonClickHandler}>로그인</ButtonStyle>;
+const LoginBtn = ({ onClick }) => {
+  return <ButtonStyle onClick={onClick}>로그인</ButtonStyle>;
 };
 
 export default LoginBtn;

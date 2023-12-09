@@ -67,11 +67,14 @@
 cosnt reducer = (state, action)=>{
     // state : 현재 상태를 매개변수로 받고
     // action = {type : "김치볶음밥",payload};
+    // 상태가 전환된다는 얘기는 새로운 주소가 들어 왔을때
+    // 값만 변했다고 이게 변한거임? 얘는 바보다.
+    // 주소가 다른 새로운 객체를 반환해야 상태가 변했다고 알아들음.
     const {type,payload} = action;
     switch(action.type) {
         case "김치볶음밥" :
             return {id:state.id + payload.id};
-        default: {...state}
+        default: {...state};
     }
 }
 ```

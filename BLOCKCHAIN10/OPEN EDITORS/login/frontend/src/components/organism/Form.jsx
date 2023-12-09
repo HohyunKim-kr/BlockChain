@@ -10,10 +10,6 @@ const Form = ({ submitName }) => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const phoneNumber = e.target.phoneNumber.value;
-    console.log(name);
-    console.log(email);
-    console.log(password);
-    console.log(phoneNumber);
   };
 
   return (

@@ -11,14 +11,14 @@ const InputLoginStyled = styled.div`
 const InputLogin = () => {
   return (
     <InputLoginStyled>
-      <label htmlFor="name">이름</label>
-      <input type="text" name="name"></input>
-      <label htmlFor="password">비밀번호</label>
-      <input type="text" name="password"></input>
-      <label htmlFor="phoneNumber">전화번호</label>
-      <input type="text" name="phoneNumber"></input>
       <label htmlFor="email">이메일</label>
       <input type="text" name="email"></input>
+      <label htmlFor="password">비밀번호</label>
+      <input type="text" name="password"></input>
+      <label htmlFor="name">이름</label>
+      <input type="text" name="name"></input>
+      <label htmlFor="phoneNumber">전화번호</label>
+      <input type="text" name="phoneNumber"></input>
     </InputLoginStyled>
   );
 };
