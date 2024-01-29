@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- web3 라이브러리 -->
+    <!-- RPC 통신을  -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/web3@4.4.0/dist/web3.min.js
+    "></script>
+  </head>
+  <body>
+    <!-- 맛보기 -->
+    <button onclick="deploy()">배포하기</button>
+    <button onclick="setePlus()">플러스</button>
+    <button onclick="setMinus()">마이너스</button>
+  </body>
+  <script>
+    // web3
+    // new Web3("네트워크의 주소")
+    console.log(window.ethereum._metamask);
+    for (const iterator in window.ethereum) {
+      console.log(iterator);
+    }
+    const web3 = new Web3(window.ethereum);
+    web3.eth.getAccounts().then(console.log);
+    let CA = "";
+    // getAccounts 가지고 있는 지갑의 전체를 조회하는 요청이다.
+    // 해당 지갑의 잔액을 조회하는 요청
+    // console.log(web3.eth);
+    // web3.eth
+    //   .getBalance("0x36d9Ee0b35D259c8487be3F40d96224BB13E4902")
+    //   .then((data) => {
+    //     // wei라는 단위를 사용한다.
+    //     // 10 ** 18으로 측정된다.
+    //     // 이 단위가 있는 이유는 가스비등의 연산에 사용되기 위해서
+
+    //     // wei를 ETH 단위로 변경
+    //     console.log(data);
+    //     const value = web3.utils.fromWei(data);
+    //     console.log(`${value} ETH`);
+    //   });
+    // inputs는 메서드가 받는 매개변수의 내용
+    // outputs는 반환값의 대한 내용
+    const abi = [
+      {
+        inputs: [],
+        name: "getValue",
+        outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [{ internalType: "uint256", name: "_value", type: "uint256" }],
+        name: "setValue",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+    ];
+    async function deploy() {
+      const ca = await web3.eth.sendTransaction({
+        from: "0x36d9Ee0b35D259c8487be3F40d96224BB13E4902",
+        gas: "3000000",
+        data: "60806040523480156100115760006000fd5b50610017565b61017b806100266000396000f3fe60806040523480156100115760006000fd5b506004361061003b5760003560e01c80632096525514610041578063552410771461005f5761003b565b60006000fd5b61004961007b565b6040516100569190610102565b60405180910390f35b610079600480360381019061007491906100c7565b61008d565b005b6000600060005054905061008a565b90565b60008111151561009d5760006000fd5b8060006000508190909055505b5056610144565b6000813590506100c081610129565b5b92915050565b6000602082840312156100da5760006000fd5b60006100e8848285016100b1565b9150505b92915050565b6100fb8161011e565b82525b5050565b600060208201905061011760008301846100f2565b5b92915050565b60008190505b919050565b6101328161011e565b811415156101405760006000fd5b5b50565bfea264697066735822122057324b59bdd2da134cdcb7c9bad01eeaf82b3cbc790c0ef665bb38cb11b8a1a064736f6c63430008000033",
+      });
+      CA = ca.contractAddress;
+      console.log(CA);
+    }
+
+    // 트랜잭션 처리 이후 CA 주소가 생성된다.
+    // 우리가 배포한 컨트랙트의 주소
+    //"0x7Af8Dc3311BEA525E6CD719Ba478F173617cD98d"
+    // 이 주소를 조회해서 컨트랙트와 상호작용을 네트워크에 요청을 보내서 진행
+    const getValue = async () => {
+      // abi로 직접 요청을 보내서 처리해보기
+      // interface를 이때 사용
+      // encodeFunctionCall 첫번째 매개변수는 ABI의 내용 두번째 매개변수에 ABI에 전달할 매개변수 내용 없으면 []빈베열이라도 넣어줘야한다.
+      // 맨앞이 함수의 내용이 있고 000000 무수한 0의 값으로 구분을 짓고 마지막에 있는 값에 매개변수
+
+      const getCodeHash = await web3.eth.abi.encodeFunctionCall(abi[0], []);
+      console.log(getCodeHash);
+      // call 읽기 전용 조회 매서드
+      const data = await web3.eth.call({
+        to: CA,
+        data: getCodeHash,
+      });
+
+      return parseInt(data);
+    };
+
+    // getValue();
+
+    const setePlus = async () => {
+      const _getValue = await getValue();
+      const setCodeHashPlus = await web3.eth.abi.encodeFunctionCall(abi[1], [
+        _getValue + 1,
+      ]);
+
+      const txPlus = {
+        from: "0x36d9Ee0b35D259c8487be3F40d96224BB13E4902",
+        to: CA,
+        data: setCodeHashPlus,
+        gas: 500000,
+        gasPrice: 210000,
+      };
+
+      const dataPlus = await web3.eth.sendTransaction(txPlus);
+
+      console.log(await getValue());
+    };
+
+    const setMinus = async () => {
+      const _getValue = await getValue();
+
+      const setCodeHashMinus = await web3.eth.abi.encodeFunctionCall(abi[1], [
+        _getValue - 1,
+      ]);
+
+      const txMinus = {
+        from: "0x36d9Ee0b35D259c8487be3F40d96224BB13E4902",
+        to: CA,
+        data: setCodeHashMinus,
+        gas: 500000,
+        gasPrice: 210000,
+      };
+
+      const dataMinus = await web3.eth.sendTransaction(txMinus);
+
+      console.log(await getValue());
+    };
+    // seteValue();
+  </script>
+</html>
